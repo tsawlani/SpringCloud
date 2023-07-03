@@ -1,0 +1,27 @@
+server:
+    port: 8888
+encrypt:
+    key: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+
+spring:
+    security:
+        user:
+            name: springcloud
+            password: springcloud
+
+    cloud:
+      config:
+        server:
+            encrypt:
+                enabled: false
+            git:
+                uri: https://github.com/tsawlani/spring-cloud-config-in-tolls
+                search-paths:
+                - station*
+                repos:
+                    perf:
+                        pattern: '*/perf'
+                        uri: https://github.com/tsawlani/spring-cloud-config-in-tolls-perf
+                        search-paths:
+                        - station*
